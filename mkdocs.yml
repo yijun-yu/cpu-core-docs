@@ -1,5 +1,6 @@
-site_name: 七级流水线 RISC-V CPU Core 文档
-site_description: 集创赛竞业达赛题 — 七级流水线 + 2bit饱和计数器分支预测
+site_name: RISC-V CPU 文档
+
+site_description: 个人学习总结网站
 site_author: yijun yu
 
 theme:
@@ -65,24 +66,19 @@ plugins:
 
 nav:
   - 首页: index.md
-  - 整体架构:
-    - 概览: 01-overview/index.md
-    - 七级流水线: 01-overview/pipeline.md
-  - 流水线各级:
-    - IF 取指: 02-fetch/index.md
-    - ID 译码: 03-decode/index.md
-    - ISS 发射: 04-issue/index.md
-    - EX 执行:
-      - 概览: 05-execute/index.md
-      - ALU: 05-execute/alu.md
-      - 乘除法: 05-execute/muldiv.md
-      - 分支预测: 05-execute/branch.md
-      - Zbb 扩展: 05-execute/zbb.md
-    - MEM 访存: 06-memory/index.md
-    - WB 写回: 07-writeback/index.md
-  - 控制逻辑:
-    - 概览: 08-control/index.md
-    - 冒险检测: 08-control/hazard.md
-    - 前递单元: 08-control/forward.md
-    - CSR 与陷阱: 08-control/csr.md
-  - 踩坑记录: 09-lessons/index.md
+  - 环境与软件: env/index.md
+  - 单周期:
+    - ALU: single-cycle/alu.md
+    - ALU_Control: single-cycle/alu_control.md
+    - Control_Unit: single-cycle/control_unit.md
+    - ImmGen: single-cycle/immgen.md
+    - PC: single-cycle/pc.md
+    - RegFile: single-cycle/regfile.md
+    - 总体架构图: single-cycle/architecture.md
+    - 数据通路图: single-cycle/datapath.md
+  - 流水线: pipeline/index.md
+  - 分支预测:
+    - 2bit 饱和计数器: branch-prediction/two-bit-saturating-counter.md
+    - GShare: branch-prediction/gshare.md
+  - 多发射: superscalar/index.md
+  - Cache: cache/index.md
