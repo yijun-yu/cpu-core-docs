@@ -10,26 +10,28 @@
       
       
       
+        <link rel="prev" href="../../pipeline/">
       
-        <link rel="next" href="env/">
+      
+        <link rel="next" href="../gshare/">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>RISC-V CPU 文档</title>
+        <title>2bit 饱和计数器 - RISC-V CPU 文档</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -48,13 +50,13 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
-  <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -83,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-mkdocs" class="md-skip">
+        <a href="#2bit" class="md-skip">
           跳转至
         </a>
       
@@ -97,7 +99,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="." title="RISC-V CPU 文档" class="md-header__button md-logo" aria-label="RISC-V CPU 文档" data-md-component="logo">
+    <a href="../.." title="RISC-V CPU 文档" class="md-header__button md-logo" aria-label="RISC-V CPU 文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
@@ -117,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              首页
+              2bit 饱和计数器
             
           </span>
         </div>
@@ -216,11 +218,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -239,7 +239,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="env/" class="md-tabs__link">
+      <a href="../../env/" class="md-tabs__link">
         
   
   
@@ -260,7 +260,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="single-cycle/alu/" class="md-tabs__link">
+        <a href="../../single-cycle/alu/" class="md-tabs__link">
           
   
   
@@ -280,7 +280,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="pipeline/" class="md-tabs__link">
+      <a href="../../pipeline/" class="md-tabs__link">
         
   
   
@@ -297,11 +297,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="branch-prediction/two-bit-saturating-counter/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -321,7 +323,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="superscalar/" class="md-tabs__link">
+      <a href="../../superscalar/" class="md-tabs__link">
         
   
   
@@ -340,7 +342,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="cache/" class="md-tabs__link">
+      <a href="../../cache/" class="md-tabs__link">
         
   
   
@@ -375,7 +377,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="RISC-V CPU 文档" class="md-nav__button md-logo" aria-label="RISC-V CPU 文档" data-md-component="logo">
+    <a href="../.." title="RISC-V CPU 文档" class="md-nav__button md-logo" aria-label="RISC-V CPU 文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
@@ -390,37 +392,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    首页
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -436,48 +411,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Commands
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Project layout
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -489,7 +422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="env/" class="md-nav__link">
+      <a href="../../env/" class="md-nav__link">
         
   
   
@@ -586,7 +519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="single-cycle/alu/" class="md-nav__link">
+      <a href="../../single-cycle/alu/" class="md-nav__link">
         
   
   
@@ -614,7 +547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="single-cycle/alu_control/" class="md-nav__link">
+      <a href="../../single-cycle/alu_control/" class="md-nav__link">
         
   
   
@@ -642,7 +575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="single-cycle/control_unit/" class="md-nav__link">
+      <a href="../../single-cycle/control_unit/" class="md-nav__link">
         
   
   
@@ -670,7 +603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="single-cycle/immgen/" class="md-nav__link">
+      <a href="../../single-cycle/immgen/" class="md-nav__link">
         
   
   
@@ -698,7 +631,7 @@
   
   
     <li class="md-nav__item">
-      <a href="single-cycle/pc/" class="md-nav__link">
+      <a href="../../single-cycle/pc/" class="md-nav__link">
         
   
   
@@ -726,7 +659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="single-cycle/regfile/" class="md-nav__link">
+      <a href="../../single-cycle/regfile/" class="md-nav__link">
         
   
   
@@ -754,7 +687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="single-cycle/architecture/" class="md-nav__link">
+      <a href="../../single-cycle/architecture/" class="md-nav__link">
         
   
   
@@ -782,7 +715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="single-cycle/datapath/" class="md-nav__link">
+      <a href="../../single-cycle/datapath/" class="md-nav__link">
         
   
   
@@ -817,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="pipeline/" class="md-nav__link">
+      <a href="../../pipeline/" class="md-nav__link">
         
   
   
@@ -841,8 +774,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -854,19 +789,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -884,7 +822,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -899,10 +837,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="branch-prediction/two-bit-saturating-counter/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2bit 饱和计数器
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -918,6 +883,103 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模块概览
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        接口定义
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        设计思路
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        关键代码
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        设计决策
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        踩过的坑
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相关模块
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -930,7 +992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="branch-prediction/gshare/" class="md-nav__link">
+      <a href="../gshare/" class="md-nav__link">
         
   
   
@@ -965,7 +1027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="superscalar/" class="md-nav__link">
+      <a href="../../superscalar/" class="md-nav__link">
         
   
   
@@ -992,7 +1054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="cache/" class="md-nav__link">
+      <a href="../../cache/" class="md-nav__link">
         
   
   
@@ -1039,10 +1101,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Commands
+        模块概览
       
     </span>
   </a>
@@ -1050,10 +1112,65 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Project layout
+        接口定义
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        设计思路
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        关键代码
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        设计决策
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        踩过的坑
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相关模块
       
     </span>
   </a>
@@ -1077,24 +1194,148 @@
 
 
 
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs<a class="headerlink" href="#welcome-to-mkdocs" title="Permanent link">¶</a></h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">¶</a></h2>
+<h1 id="2bit">2bit 饱和计数器<a class="headerlink" href="#2bit" title="Permanent link">¶</a></h1>
+<h2 id="_1">模块概览<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<p>本模块实现 <strong>2bit 饱和计数器</strong>分支预测，对应 RTL 文件 <code>Branch_Predictor.v</code>。</p>
 <ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
+<li><strong>位于流水线</strong>：IF / ID 阶段读取，EX 阶段更新</li>
+<li><strong>预测粒度</strong>：每条分支指令一个状态</li>
+<li><strong>预测策略</strong>：4 态饱和计数器（强不跳 / 弱不跳 / 弱跳 / 强跳）</li>
 </ul>
-<h2 id="project-layout">Project layout<a class="headerlink" href="#project-layout" title="Permanent link">¶</a></h2>
-<div class="language-text highlight"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre></div></td></tr></tbody></table></div>
+<h2 id="_2">接口定义<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>信号名</th>
+<th>方向</th>
+<th>位宽</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>clk</code></td>
+<td>input</td>
+<td>1</td>
+<td>时钟</td>
+</tr>
+<tr>
+<td><code>rst_n</code></td>
+<td>input</td>
+<td>1</td>
+<td>低有效复位</td>
+</tr>
+<tr>
+<td><code>pc</code></td>
+<td>input</td>
+<td>32</td>
+<td>当前 PC，用于索引预测表</td>
+</tr>
+<tr>
+<td><code>branch_taken_actual</code></td>
+<td>input</td>
+<td>1</td>
+<td>EX 级反馈的实际跳转结果</td>
+</tr>
+<tr>
+<td><code>predict_taken</code></td>
+<td>output</td>
+<td>1</td>
+<td>预测结果（1=跳，0=不跳）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">设计思路<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<p>2bit 饱和计数器维护四个状态：</p>
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>含义</th>
+<th>预测</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>00</code></td>
+<td>强不跳</td>
+<td>不跳</td>
+</tr>
+<tr>
+<td><code>01</code></td>
+<td>弱不跳</td>
+<td>不跳</td>
+</tr>
+<tr>
+<td><code>10</code></td>
+<td>弱跳</td>
+<td>跳</td>
+</tr>
+<tr>
+<td><code>11</code></td>
+<td>强跳</td>
+<td>跳</td>
+</tr>
+</tbody>
+</table>
+<p>实际跳转时状态向 <code>11</code> 移动，实际不跳时状态向 <code>00</code> 移动。</p>
+<h2 id="_4">关键代码<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<div class="language-verilog highlight"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">always</span><span class="w"> </span><span class="p">@(</span><span class="k">posedge</span><span class="w"> </span><span class="n">clk</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="k">negedge</span><span class="w"> </span><span class="n">rst_n</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">rst_n</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="n">state</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mh">2</span><span class="mb">'b01</span><span class="p">;</span><span class="w">  </span><span class="c1">// 复位到弱不跳</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="k">end</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">update_en</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">            </span><span class="mh">2</span><span class="mb">'b00</span><span class="o">:</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">branch_taken_actual</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mh">2</span><span class="mb">'b01</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mh">2</span><span class="mb">'b00</span><span class="p">;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">            </span><span class="mh">2</span><span class="mb">'b01</span><span class="o">:</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">branch_taken_actual</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mh">2</span><span class="mb">'b10</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mh">2</span><span class="mb">'b00</span><span class="p">;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">            </span><span class="mh">2</span><span class="mb">'b10</span><span class="o">:</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">branch_taken_actual</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mh">2</span><span class="mb">'b11</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mh">2</span><span class="mb">'b01</span><span class="p">;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">            </span><span class="mh">2</span><span class="mb">'b11</span><span class="o">:</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">branch_taken_actual</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mh">2</span><span class="mb">'b11</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mh">2</span><span class="mb">'b10</span><span class="p">;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">        </span><span class="k">endcase</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="k">end</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="k">end</span>
+</span></code></pre></div></td></tr></tbody></table></div>
+<h2 id="_5">设计决策<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">为什么选 2bit 而不是 1bit</p>
+<p>1bit 预测器在循环边界会连续 miss 两次（最后一次不跳 + 下次第一次跳）。
+2bit 在同样场景只 miss 一次，对短循环场景命中率提升显著，
+这也是工业界 BHT 的最低基线。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">为什么复位到弱不跳 (01)</p>
+<p>冷启动状态对短程序影响较大。选 01 而非 00 的好处是：
+一次正确的跳转就能切到“跳”侧，反应更快。
+选 01 而非 10 是因为 RISC-V 程序中<strong>条件分支总体不跳的比例略高</strong>。</p>
+</div>
+<h2 id="_6">踩过的坑<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
+<div class="admonition bug">
+<p class="admonition-title">坑 1：复位状态机错乱</p>
+<p>初版没把复位信号同步到 always 块里，
+导致冷启动时 <code>state</code> 是 X，仿真波形上预测结果不稳定。</p>
+<p><strong>修复</strong>：把 <code>negedge rst_n</code> 加进敏感列表，并在 if 分支里显式赋初值。</p>
+</div>
+<div class="admonition bug">
+<p class="admonition-title">坑 2：预测更新时机</p>
+<p>最早把更新逻辑放在 IF 级，但 EX 级才能得到真实跳转结果，
+导致状态机用“还没确认”的预测值自我更新，命中率反而下降。</p>
+<p><strong>修复</strong>：预测在 IF 读出，更新延迟到 EX 级反馈回来后再写入。</p>
+</div>
+<h2 id="_7">相关模块<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>Branch_Unit</strong>：在 EX 级实际计算分支条件，给出 <code>branch_taken_actual</code> 反馈</li>
+<li><strong>IF_ID_Reg</strong>：把预测结果随指令传到下一级（详见 <a href="../../pipeline/">流水线</a>）</li>
+<li><strong>Hazard_Detection</strong>：预测错误时清流水线（详见 <a href="../../pipeline/">流水线</a>）</li>
+</ul>
 
 
 
@@ -1150,10 +1391,10 @@ docs/
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.indexes", "search.highlight", "search.suggest", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.indexes", "search.highlight", "search.suggest", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   

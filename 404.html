@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="集创赛竞业达赛题 — 七级流水线 + 2bit饱和计数器分支预测">
+        <meta name="description" content="个人学习总结网站">
       
       
         <meta name="author" content="yijun yu">
@@ -23,7 +23,7 @@
     
     
       
-        <title>七级流水线 RISC-V CPU Core 文档</title>
+        <title>RISC-V CPU 文档</title>
       
     
     
@@ -83,7 +83,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="/." title="七级流水线 RISC-V CPU Core 文档" class="md-header__button md-logo" aria-label="七级流水线 RISC-V CPU Core 文档" data-md-component="logo">
+    <a href="/." title="RISC-V CPU 文档" class="md-header__button md-logo" aria-label="RISC-V CPU 文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -97,7 +97,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            七级流水线 RISC-V CPU Core 文档
+            RISC-V CPU 文档
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -222,20 +222,17 @@
   
   
   
-    
-    
-      <li class="md-tabs__item">
-        <a href="/01-overview/" class="md-tabs__link">
-          
+    <li class="md-tabs__item">
+      <a href="/env/" class="md-tabs__link">
+        
   
   
     
   
-  整体架构
+  环境与软件
 
-        </a>
-      </li>
-    
+      </a>
+    </li>
   
 
       
@@ -247,35 +244,13 @@
     
     
       <li class="md-tabs__item">
-        <a href="/02-fetch/" class="md-tabs__link">
+        <a href="/single-cycle/alu/" class="md-tabs__link">
           
   
   
     
   
-  流水线各级
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="/08-control/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  控制逻辑
+  单周期
 
         </a>
       </li>
@@ -289,13 +264,73 @@
   
   
     <li class="md-tabs__item">
-      <a href="/09-lessons/" class="md-tabs__link">
+      <a href="/pipeline/" class="md-tabs__link">
         
   
   
     
   
-  踩坑记录
+  流水线
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="/branch-prediction/two-bit-saturating-counter/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  分支预测
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="/superscalar/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  多发射
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="/cache/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Cache
 
       </a>
     </li>
@@ -324,13 +359,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="七级流水线 RISC-V CPU Core 文档" class="md-nav__button md-logo" aria-label="七级流水线 RISC-V CPU Core 文档" data-md-component="logo">
+    <a href="/." title="RISC-V CPU 文档" class="md-nav__button md-logo" aria-label="RISC-V CPU 文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    七级流水线 RISC-V CPU Core 文档
+    RISC-V CPU 文档
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -368,84 +403,15 @@
   
   
   
-    
-    
-      
-        
-          
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="/01-overview/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    整体架构
-  
-
-    
-  </span>
-  
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    整体架构
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
-      <a href="/01-overview/pipeline/" class="md-nav__link">
+      <a href="/env/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    七级流水线
+    环境与软件
   
 
     
@@ -457,14 +423,6 @@
     </li>
   
 
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
     
       
       
@@ -476,7 +434,9 @@
     
       
         
-          
+      
+        
+      
         
       
         
@@ -505,15 +465,14 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <div class="md-nav__link md-nav__container">
-            <a href="/02-fetch/" class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
     
   
-    流水线各级
+    单周期
   
 
     
@@ -521,167 +480,28 @@
   
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
-    流水线各级
+    单周期
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
               
-            
-              
                 
   
   
   
   
     <li class="md-nav__item">
-      <a href="/03-decode/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ID 译码
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="/04-issue/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ISS 发射
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="/05-execute/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    EX 执行
-  
-
-    
-  </span>
-  
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    EX 执行
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="/05-execute/alu/" class="md-nav__link">
+      <a href="/single-cycle/alu/" class="md-nav__link">
         
   
   
@@ -709,14 +529,14 @@
   
   
     <li class="md-nav__item">
-      <a href="/05-execute/muldiv/" class="md-nav__link">
+      <a href="/single-cycle/alu_control/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    乘除法
+    ALU_Control
   
 
     
@@ -737,14 +557,14 @@
   
   
     <li class="md-nav__item">
-      <a href="/05-execute/branch/" class="md-nav__link">
+      <a href="/single-cycle/control_unit/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    分支预测
+    Control_Unit
   
 
     
@@ -765,14 +585,126 @@
   
   
     <li class="md-nav__item">
-      <a href="/05-execute/zbb/" class="md-nav__link">
+      <a href="/single-cycle/immgen/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Zbb 扩展
+    ImmGen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/single-cycle/pc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/single-cycle/regfile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RegFile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/single-cycle/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总体架构图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/single-cycle/datapath/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据通路图
   
 
     
@@ -792,23 +724,22 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
   
     <li class="md-nav__item">
-      <a href="/06-memory/" class="md-nav__link">
+      <a href="/pipeline/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    MEM 访存
+    流水线
   
 
     
@@ -820,42 +751,6 @@
     </li>
   
 
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="/07-writeback/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    WB 写回
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
     
       
       
@@ -865,12 +760,6 @@
   
     
     
-      
-        
-          
-        
-      
-        
       
         
       
@@ -889,18 +778,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <div class="md-nav__link md-nav__container">
-            <a href="/08-control/" class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
     
   
-    控制逻辑
+    分支预测
   
 
     
@@ -908,43 +796,35 @@
   
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
   
-    控制逻辑
+    分支预测
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
               
-            
-              
                 
   
   
   
   
     <li class="md-nav__item">
-      <a href="/08-control/hazard/" class="md-nav__link">
+      <a href="/branch-prediction/two-bit-saturating-counter/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    冒险检测
+    2bit 饱和计数器
   
 
     
@@ -965,42 +845,14 @@
   
   
     <li class="md-nav__item">
-      <a href="/08-control/forward/" class="md-nav__link">
+      <a href="/branch-prediction/gshare/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    前递单元
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="/08-control/csr/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CSR 与陷阱
+    GShare
   
 
     
@@ -1028,14 +880,41 @@
   
   
     <li class="md-nav__item">
-      <a href="/09-lessons/" class="md-nav__link">
+      <a href="/superscalar/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    踩坑记录
+    多发射
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/cache/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cache
   
 
     
